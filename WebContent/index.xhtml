@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head><title>Curso JSF</title></h:head> 
+<body> 
+	<h:outputLabel value="#{olaController.mensagem}"/>
+	<h:form>
+	<h:commandLink action="sobre" value="Sobre_Estatico" /><br/>
+	<h:commandLink action="#{olaController.sobre()}" value="Sobre_Dinamica" /><br/>
+	<h:commandLink action="#{olaController.sobreMetodo()}" value="Sobre_Metodo" /><br/>
+	<h:commandLink action="#{olaController.sobreRedirect()}" value="Sobre_Redirect" /><br/>
+	<h:commandLink action="#{olaController.login()}" value="Login" /><br />
+	<h:commandLink action="#{olaController.frmCadastroUsuarios()}" value="Formulario de Cadastro de Usuarios" />
+	</h:form>
+	
+</body> 
+
+</html>
