@@ -9,16 +9,23 @@
 </head> 
 <body>
 	<h1>Pagina de Cadastro de Usuarios</h1>
+	<h:messages />
 	<h:form>
-		<h:outputLabel value="Nome:" /><br/>
-		<h:inputText value="" /><br/>
-		<h:outputLabel value="Email:" /><br/>
-		<h:inputText value="" /><br/>
-		<h:outputLabel value="Username:" /><br/>
-		<h:inputText value="" /><br/>
-		<h:outputLabel value="Senha:" /><br/>
-		<h:inputSecret value="" /><br/>
-		<h:button value="Criar Usuario"/>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Nome:" /><br/>
+			<h:inputText value="#{controleUsuario.usuario.nome}" /><br/>
+			<h:outputLabel value="Email:" /><br/>
+			<h:inputText value="#{controleUsuario.usuario.email}" /><br/>
+			<h:outputLabel value="Username:" /><br/>
+			<h:inputText value="#{controleUsuario.usuario.username}" /><br/>
+			<h:outputLabel value="Senha:" /><br/>
+			<h:inputSecret value="#{controleUsuario.usuario.senha}" /><br/>
+			<h:outputLabel value="Confirmar Senha:" /><br/>
+			<h:inputSecret value="#{controleUsuario.usuario.confirmasenha}" /><br/>
+		<f:facet name="footer">
+			<h:commandButton action="#{controleUsuario.recebeDados()}" value="Criar Usuario"/>
+		</f:facet>
+		</h:panelGrid>
 	</h:form>
 
 </body> 

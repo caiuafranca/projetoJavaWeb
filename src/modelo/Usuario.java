@@ -2,30 +2,29 @@ package modelo;
 
 import java.io.Serializable;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.validator.constraints.*;
 
 public class Usuario implements Serializable{
 
-	@NotEmpty (message="o Nome deve ser informado")
+	@NotEmpty (message="O Nome deve ser informado")
 	private String nome;
-	@Email(message = "insira um Email válido")
+	@Email(message = "Insira um Email válido")
+	@NotEmpty
 	private String email;
 	@NotEmpty(message="Username deve ser inserido")
 	private String username;
-	@NotEmpty(message = "senha deve ser inserida")
+	@NotEmpty(message = "Senha deve ser inserida")
 	private String senha;
+	@NotEmpty(message = "A Confirmação de Senha deve ser inserida")
+	private String confirmasenha;
 	
+
+
 	public Usuario(){
 		this.nome = "";
 		this.email = "";
 		this.username = "";
 		this.senha = "";		
-	}
-	
-	public String cadastroUsuarios(){
-		
-		return "Usuario Cadastrado com Sucesso!";		
 	}
 	
 	public String getNome() {
@@ -51,6 +50,14 @@ public class Usuario implements Serializable{
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getConfirmasenha() {
+		return confirmasenha;
+	}
+
+	public void setConfirmasenha(String confirmasenha) {
+		this.confirmasenha = confirmasenha;
 	}
 	
 	
